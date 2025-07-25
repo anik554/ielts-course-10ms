@@ -36,7 +36,7 @@ const CoursePointers = ({ sectionData }: ISectionData) => {
             {pointersData[0]?.values.map((data, index) => (
               <div key={index} className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
-                <p className="text-lg" style={{ color: `${data.color}` }}>
+                <p className="text-lg" >
                   {data.text}
                 </p>
               </div>

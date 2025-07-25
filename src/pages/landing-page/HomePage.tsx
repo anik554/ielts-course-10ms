@@ -4,6 +4,7 @@ import HeroSection from "@/components/models/HeroSection";
 import { useGetIeltsCourseQuery } from "@/redux/api/ieltsCourseApi";
 import GroupEngagement from "@/components/models/GroupEngagement";
 import CoursePointers from "@/components/models/CoursePointers";
+import CourseDetails from "@/components/models/CourseDetails";
 
 const HomePage = () => {
   const { data, isLoading, isError, error } = useGetIeltsCourseQuery("en");
@@ -24,7 +25,7 @@ const HomePage = () => {
   const course = data?.data;
 
   return (
-    <div className="container">
+    <div>
       {course && (
         <>
           <HeroSection title={course.title} description={course.description} />
@@ -32,6 +33,7 @@ const HomePage = () => {
           <CourseFeature sectionData={course.sections} />
           <GroupEngagement sectionData={course.sections} />
           <CoursePointers sectionData={course.sections} />
+          <CourseDetails sectionData={course.sections} />
         </>
       )}
     </div>
