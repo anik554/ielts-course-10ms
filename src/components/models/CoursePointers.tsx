@@ -11,7 +11,6 @@ interface ISectionData {
 
 const CoursePointers = ({ sectionData }: ISectionData) => {
   const [pointersData, setPointersData] = useState<IPointer[]>([]);
-  console.log(pointersData);
 
   useEffect(() => {
     const getPointersData = () => {
