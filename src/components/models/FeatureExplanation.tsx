@@ -44,7 +44,7 @@ const FeatureExplanation = ({ sectionData }: ISectionData) => {
                 <h2 className="text-2xl font-bold mb-2">{data.title}</h2>
                 <ul className="space-y-2 w-full text-justify">
                   {data.checklist.map((item, idx) => (
-                    <li key={idx} className="flex items-start text-gray-800">
+                    <li key={idx} className="flex items-start">
                       <svg
                         className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0"
                         fill="none"
@@ -63,7 +63,7 @@ const FeatureExplanation = ({ sectionData }: ISectionData) => {
                   ))}
                 </ul>
               </div>
-              <div className="flex justify-end items-center">
+              <div className="flex justify-center items-center">
                 <img
                   src={data.file_url}
                   alt={data.title}

@@ -6,9 +6,11 @@ import GroupEngagement from "@/components/models/GroupEngagement";
 import CoursePointers from "@/components/models/CoursePointers";
 import CourseDetails from "@/components/models/CourseDetails";
 import FeatureExplanation from "@/components/models/FeatureExplanation";
+import { useLanguage } from "@/context/useLanguage";
 
 const HomePage = () => {
-  const { data, isLoading, isError, error } = useGetIeltsCourseQuery("en");
+  const { language } = useLanguage();
+  const { data, isLoading, isError, error } = useGetIeltsCourseQuery(language ?"en" : "bn");
 
   if (isLoading) {
     return <div className="text-center mt-10">Loading...</div>;
@@ -29,7 +31,7 @@ const HomePage = () => {
     <div>
       {course && (
         <>
-          <HeroSection title={course.title} description={course.description} />
+          <HeroSection title={course.title} description={course.description} mediaData={course.media} checkListData={course.checklist} />
           <CourseInstructor sectionData={course.sections} />
           <CourseFeature sectionData={course.sections} />
           <GroupEngagement sectionData={course.sections} />
