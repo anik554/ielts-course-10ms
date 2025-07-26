@@ -11,6 +11,7 @@ import {
 import { Button } from "../ui/button";
 import type { ICheckList } from "@/interfaces/checkList.interface";
 import { useLanguage } from "@/context/useLanguage";
+import { Phone } from "lucide-react";
 
 interface IHeroSection {
   title: string;
@@ -81,15 +82,37 @@ const HeroSection = ({
           </Button>
         </div>
 
+        <div>
+          <h2 className="text-xl font-semibold my-5">
+            {language ? "What's in this course" : "এই কোর্সে যা থাকছে"}
+          </h2>
+        </div>
         <ul className="text-sm space-y-4">
           {checkListData.map((checkData) => (
             <li key={checkData.id} className="flex items-center gap-2">
-              <img src={checkData.icon} alt="icon" className="w-4 h-4 dark:invert" />
+              <img
+                src={checkData.icon}
+                alt="icon"
+                className="w-4 h-4 dark:invert"
+              />
               <span>{checkData.text}</span>
             </li>
           ))}
         </ul>
+        
       </Card>
+      {/* <div className="absolute right-[5%] top-[100%] mt-96 w-[400px] 2xl:w-[500px]">
+        <h2>
+          {language
+            ? "To know more about the course"
+            : "কোর্সটি সম্পর্কে বিস্তারিত জানতে"}
+        </h2>
+        <p>
+          <Phone className="inline-block mr-1" />
+          {language ? "Call (16910)" : "ফোন করুন (16910)"}
+        </p>
+      </div> */}
+      
     </div>
   );
 };
