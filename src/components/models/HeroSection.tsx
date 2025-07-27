@@ -11,7 +11,6 @@ import {
 import { Button } from "../ui/button";
 import type { ICheckList } from "@/interfaces/checkList.interface";
 import { useLanguage } from "@/context/useLanguage";
-import { Phone } from "lucide-react";
 
 interface IHeroSection {
   title: string;
@@ -99,7 +98,6 @@ const HeroSection = ({
             </li>
           ))}
         </ul>
-        
       </Card>
       {/* <div className="absolute right-[5%] top-[100%] mt-96 w-[400px] 2xl:w-[500px]">
         <h2>
@@ -112,7 +110,6 @@ const HeroSection = ({
           {language ? "Call (16910)" : "ফোন করুন (16910)"}
         </p>
       </div> */}
-      
     </div>
   );
 };

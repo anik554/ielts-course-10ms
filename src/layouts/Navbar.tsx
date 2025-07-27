@@ -1,5 +1,6 @@
 import Logo from "@/assets/10ms.png";
 import ModeToggle from "@/components/dark-mode/ModeToggle";
+import CallModal from "@/components/models/CallModal";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -19,10 +20,15 @@ const Navbar = () => {
         />
         <Label htmlFor="airplane-mode">{language ? "EN" : "BN"}</Label>
         <ModeToggle />
-        <div className="flex items-center gap-1 text-green-700 text-sm font-medium">
-          <Phone size={18} />
-          <span>16910</span>
-        </div>
+        <CallModal
+          trigger={
+            <div className="flex items-center gap-1 text-green-700 text-sm font-medium" style={{ cursor: "pointer" }}>
+              <Phone size={18} />
+              <span>16910</span>
+            </div>
+          }
+        />
+
         <Button className="bg-green-700 text-white" size="sm">
           {language ? "Log in" : "লগ-ইন"}
         </Button>
